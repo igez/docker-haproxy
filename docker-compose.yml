@@ -1,0 +1,19 @@
+version: '2'
+services:
+    PROXY:
+        image: igez/haproxy
+        restart: always
+        volumes:
+            - "./haproxy:/etc/haproxy"
+        external_links:
+            - GLY
+            - WNP
+        ports:
+            - "80:80"
+            - "9000:9000"
+        container_name: "PROXY"
+# Join networks
+networks:
+    default:
+        external:
+            name: dev
