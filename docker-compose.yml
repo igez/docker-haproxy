@@ -5,13 +5,10 @@ services:
         restart: always
         volumes:
             - "./haproxy:/etc/haproxy"
-        external_links:
-            - GLY
-            - WNP
         ports:
             - "80:80"
             - "9000:9000"
-        container_name: "PROXY"
+        container_name: "lb-1"
 # Join networks
 networks:
     default:
