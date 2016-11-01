@@ -7,7 +7,6 @@ services:
             - "./haproxy:/etc/haproxy"
         ports:
             - "80:80"
-            - "9000:9000"
         container_name: "lb-1"
 # Join networks
 networks:
